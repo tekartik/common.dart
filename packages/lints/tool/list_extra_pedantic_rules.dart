@@ -44,6 +44,9 @@ Future<void> _writeRules(String name, List<String> rules) async {
   for (var element in rules) {
     sb.writeln('  - $element');
   }
+  for (var element in rules) {
+    sb.writeln('    $element: true');
+  }
   await Directory('.local').create(recursive: true);
   await File(join('.local', '${name}_rules.txt')).writeAsString(sb.toString());
 }
