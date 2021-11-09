@@ -51,4 +51,4 @@ neither its package to be maintained however:
 ```dart
 replaceAll('ref: null_safety', 'ref: dart2_3');
 ```
-
+- In the worst case, you could always fork a package you need and submit PR!
