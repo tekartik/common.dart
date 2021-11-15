@@ -49,6 +49,6 @@ neither its package to be maintained however:
   full year and updating should just be a matter of doing a global replace:
 
 ```dart
-replaceAll('ref: null_safety', 'ref: dart2_3');
+replaceAll('ref: dart2_3', 'ref: dart2_3');
 ```
 - In the worst case, you could always fork a package you need and submit PR!
