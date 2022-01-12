@@ -2,27 +2,31 @@
 
 Package versioning is based on git ref which should be the same for all tekartik public packages.
 
-> * Latest ref version: `dart2_3` (dart2 package revision 3)
-> * Previous versions: `null_safety`, `dart2`
->
-> Public package should use a `https://` url. Previously they were documented as `git://` which causes recent issues.
->
-> Mibration, before:
-> ```yaml
-> <packages>:
->   # Bad usage or git scheme here, should be https
->   url: git://github.com/tekartik/<path>
->   # earlier version
->   ref: null_safety (or dart2 or a previous version)
-> ```
-> After:
-> ```yaml
-> <packages>:
->   # New https scheme used
->   url: https://github.com/tekartik/<path>
->   # current version!
->   ref: dart2_3
-> ```
+* Latest ref version: `dart2_3` (dart2 package revision 3)
+* Previous versions: `null_safety`, `dart2`
+
+Public package should use a `https://` url. Previously they were documented as `git://` which causes recent issues.
+
+Migration, before:
+```yaml
+<packages>:
+  # Bad usage or git scheme here, should be https
+  url: git://github.com/tekartik/<path>
+  # earlier version
+  ref: null_safety (or dart2 or a previous version)
+  # optional sub path
+  path: ...
+```
+After:
+```yaml
+<packages>:
+  # New https scheme used
+  url: https://github.com/tekartik/<path>
+  # current version!
+  ref: dart2_3
+  # optional sub path
+  path: ...
+```
 
 Example:
 
@@ -49,6 +53,8 @@ neither its package to be maintained however:
   full year and updating should just be a matter of doing a global replace:
 
 ```dart
-replaceAll('ref: dart2_3', 'ref: dart2_3');
+// Migration from null_safety to dart2_3
+replaceAll('url: git://', 'url: https://');
+replaceAll('ref: null_safety', 'ref: dart2_3');
 ```
 - In the worst case, you could always fork a package you need and submit PR!
