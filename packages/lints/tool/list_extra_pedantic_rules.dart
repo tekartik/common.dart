@@ -62,7 +62,8 @@ Future<void> main() async {
   var pedanticRules =
       await getRules(join(pedanticLibPath, 'analysis_options.1.11.0.yaml'));
   await _writeRules('pedantic', pedanticRules);
-  var lintsRecommendedRules = await getRules(join(lintsLibPath, 'recommended.yaml'));
+  var lintsRecommendedRules =
+      await getRules(join(lintsLibPath, 'recommended.yaml'));
   await _writeRules('recommended_lints', lintsRecommendedRules);
   var lintsCoreRules = await getRules(join(lintsLibPath, 'core.yaml'));
   await _writeRules('core_lints', lintsCoreRules);
@@ -83,8 +84,11 @@ Future<void> main() async {
   var all = <String>{}
     ..addAll(rules)
     ..addAll(pedanticRules)
-    ..addAll(lintsRecommendedRules)..addAll(lintsCoreRules);
+    ..addAll(lintsRecommendedRules)
+    ..addAll(lintsCoreRules);
   diffRules = List<String>.from(all)..sort();
-  diffRules.removeWhere((element) => lintsRecommendedRules.contains(element) || lintsCoreRules.contains(element));
+  diffRules.removeWhere((element) =>
+      lintsRecommendedRules.contains(element) ||
+      lintsCoreRules.contains(element));
   await _writeRules('tekartik_recommended_over_lints', diffRules);
 }
