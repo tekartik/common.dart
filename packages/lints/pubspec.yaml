@@ -14,3 +14,6 @@ dev_dependencies:
   pedantic:
   yaml:
   path:
+
+dependency_overrides:
+  lints: '>=2.0.0'
