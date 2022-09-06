@@ -16,4 +16,4 @@ dev_dependencies:
   path:
 
 dependency_overrides:
-  lints: '>=2.0.0'
+  # lints: '>=2.0.0'
