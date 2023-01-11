@@ -1,0 +1,5 @@
+- name: unawaited_futures
+  comment: Needed to handle missing await
+
+- name: avoid_dynamic_calls
+  comment: Make sure we type an element before calling any method/member on it
