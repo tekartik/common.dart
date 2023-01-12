@@ -18,6 +18,10 @@ analyzer:
   language:
     strict-casts: true
 
+  # Always include any folder name build
+  exclude:
+    - build/**
+
   errors:
     # treat missing required parameters as a warning (not a hint)
     missing_required_param: warning
