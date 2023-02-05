@@ -24,3 +24,11 @@ In `analysis_options.yaml`:
 # tekartik recommended lints (extension over google lints and pedantic)
 include: package:tekartik_lints/recommended.yaml
 ```
+
+Stricter:
+`analysis_options.yaml`:
+
+```yaml
+# tekartik strict lints (extension over google lints and pedantic)
+include: package:tekartik_lints/strict.yaml
+```

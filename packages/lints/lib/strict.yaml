@@ -1,0 +1,7 @@
+# Include recommended first
+include: package:tekartik_lints/recommended.yaml
+
+analyzer:
+  language:
+    strict-casts: true
+    strict-inference: true

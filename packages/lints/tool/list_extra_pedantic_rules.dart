@@ -62,27 +62,33 @@ Future<void> main() async {
   var pedanticRules =
       await getRules(join(pedanticLibPath, 'analysis_options.1.11.0.yaml'));
   await _writeRules('pedantic', pedanticRules);
-  var lintsRules = await getRules(join(lintsLibPath, 'recommended.yaml'));
-  await _writeRules('lints', lintsRules);
+  var lintsRecommendedRules =
+      await getRules(join(lintsLibPath, 'recommended.yaml'));
+  await _writeRules('recommended_lints', lintsRecommendedRules);
+  var lintsCoreRules = await getRules(join(lintsLibPath, 'core.yaml'));
+  await _writeRules('core_lints', lintsCoreRules);
 
   var diffRules = List<String>.from(rules);
   diffRules.removeWhere((element) => pedanticRules.contains(element));
   await _writeRules('pedantic_diff', diffRules);
   diffRules = List<String>.from(rules);
-  diffRules.removeWhere((element) => lintsRules.contains(element));
+  diffRules.removeWhere((element) => lintsRecommendedRules.contains(element));
   await _writeRules('lints_diff', diffRules);
-  diffRules = List<String>.from(lintsRules);
+  diffRules = List<String>.from(lintsRecommendedRules);
   diffRules.removeWhere((element) => pedanticRules.contains(element));
   await _writeRules('lints_over_pedantic', diffRules);
   diffRules = List<String>.from(pedanticRules);
-  diffRules.removeWhere((element) => lintsRules.contains(element));
+  diffRules.removeWhere((element) => lintsRecommendedRules.contains(element));
   await _writeRules('pedantic_over_lints', diffRules);
 
   var all = <String>{}
     ..addAll(rules)
     ..addAll(pedanticRules)
-    ..addAll(lintsRules);
+    ..addAll(lintsRecommendedRules)
+    ..addAll(lintsCoreRules);
   diffRules = List<String>.from(all)..sort();
-  diffRules.removeWhere((element) => lintsRules.contains(element));
+  diffRules.removeWhere((element) =>
+      lintsRecommendedRules.contains(element) ||
+      lintsCoreRules.contains(element));
   await _writeRules('tekartik_recommended_over_lints', diffRules);
 }
