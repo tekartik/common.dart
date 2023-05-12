@@ -1,7 +1,7 @@
 import 'package:dev_test/package.dart';
 import 'package:path/path.dart';
 
-Future main() async {
+Future<void> main() async {
   for (var dir in [
     'lints',
   ]) {

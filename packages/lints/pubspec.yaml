@@ -1,18 +1,19 @@
 name: tekartik_lints
 description: Common dart lints
-version: 0.2.1
+version: 0.3.0
 publish_to: none
 
 environment:
-  sdk: '>=2.18.0 <3.0.0'
+  sdk: '>=2.18.0 <4.0.0'
 
 dependencies:
   lints:
 
 dev_dependencies:
+  dev_test:
+  path:
   test: '>=1.16.0'
   yaml:
-  path:
 
 dependency_overrides:
-  # lints: '>=2.0.0'
+# lints: '>=2.0.0'/
