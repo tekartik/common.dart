@@ -47,17 +47,26 @@ linter:
     - camel_case_types
     - cancel_subscriptions
     - curly_braces_in_flow_control_structures
+    - dangling_library_doc_comments
     - depend_on_referenced_packages
+    - deprecated_member_use_from_same_package
     - directives_ordering
+    - discarded_futures
     - empty_catches
     - hash_and_equals
+    - implicit_reopen
+    - invalid_case_patterns
     - iterable_contains_unrelated_type
     - library_private_types_in_public_api
     - list_remove_unrelated_type
+    - matching_super_parameters
     - no_adjacent_strings_in_list
     - no_duplicate_case_values
     - no_leading_underscores_for_library_prefixes
     - no_leading_underscores_for_local_identifiers
+    - no_literal_bool_comparisons
+    - no_self_assignments
+    - no_wildcard_variable_uses
     - non_constant_identifier_names
     - null_check_on_nullable_type_parameter
     - omit_local_variable_types
@@ -73,6 +82,7 @@ linter:
     - sort_child_properties_last
     - test_types_in_equals
     - throw_in_finally
+    - type_literal_in_constant_pattern
     - unawaited_futures
     - unnecessary_constructor_name
     - unnecessary_import
