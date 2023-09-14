@@ -25,7 +25,7 @@ dependencies:
   tekartik_lints:
     git:
       url: https://github.com/tekartik/common.dart
-      ref: dart2_3
+      ref: dart3a
       path: packages/lints
     version: '>=0.1.0'
 ```
@@ -54,7 +54,7 @@ After:
   # New https scheme used
   url: https://github.com/tekartik/<path>
   # current version!
-  ref: dart2_3
+  ref: dart3a
   # optional sub path
   path: ...
 ```
@@ -66,7 +66,7 @@ dependencies:
   tekartik_lints:
     git:
       url: https://github.com/tekartik/common.dart
-      ref: dart2_3
+      ref: dart3a
       path: packages/lints
     version: '>=0.1.0'
 ```
