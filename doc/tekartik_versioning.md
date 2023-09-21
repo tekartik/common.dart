@@ -16,11 +16,13 @@ neither its package to be maintained however:
 
 Package versioning is based on git ref which should be the same for all tekartik public packages.
 
-* Latest ref version: `dart3a` (dart2 package revision 3, is supports dart2 and dart3 - it works on dart 3.0)
+* Latest ref version: `dart3a` (dart3 package revision `a`, it supports dart3)
 * Previous versions:
-  * `dart2_3` (dart2 package revision 3, is supports dart2 and dart3 - it works on dart 3.0)
+  * `dart2_3` (dart2 package revision 3, it supports dart2 and dart3 - it works on dart 3.0)
   * `dart2`
   * `null_safety`
+
+Future ref should be `dart3b`,`dart3c`...`dart4a`...
 
 ```yaml
 dependencies:
