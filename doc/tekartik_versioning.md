@@ -11,14 +11,16 @@ neither its package to be maintained however:
 - versioning should ensure almost forever compatibility or deprecate at least during 2 major version before removing.
 - upper versioning limit is discouraged (although mandatory for published package) for dependencies. Trust all
   dependencies by default!
-- New version (dart2, dart2_3) are created with SDK or global dependencies conflicts. Hopefully a version should last a
-  full year and updating should just be a matter of doing a global replace:
-
+- New version (dart3a, dart2_3, dart2) are created with SDK or global dependencies conflicts. Hopefully a version should last a
+  full year and updating should just be a matter of doing a global replace of the branch name in the pubspect.yaml file
 
 Package versioning is based on git ref which should be the same for all tekartik public packages.
 
-* Latest ref version: `dart2_3` (dart2 package revision 3, is supports dart2 and dart3 - it works on dart 3.0)
-* Previous versions: `null_safety`, `dart2`
+* Latest ref version: `dart3a` (dart2 package revision 3, is supports dart2 and dart3 - it works on dart 3.0)
+* Previous versions:
+  * `dart2_3` (dart2 package revision 3, is supports dart2 and dart3 - it works on dart 3.0)
+  * `dart2`
+  * `null_safety`
 
 ```yaml
 dependencies:
