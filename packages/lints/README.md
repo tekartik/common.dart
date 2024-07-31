@@ -32,3 +32,11 @@ Stricter:
 # tekartik strict lints (extension over google lints and pedantic)
 include: package:tekartik_lints/strict.yaml
 ```
+
+Stricter for package (api docs and no print):
+`analysis_options.yaml`:
+
+```yaml
+# tekartik strict lints (extension over google lints and pedantic)
+include: package:tekartik_lints/package.yaml
+```

@@ -1,0 +1,8 @@
+# avoid print, api docs added to strict
+# Include strict first
+include: package:tekartik_lints/strict.yaml
+
+linter:
+  rules:
+    public_member_api_docs: true
+    avoid_print: true
