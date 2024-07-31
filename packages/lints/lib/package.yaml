@@ -11,4 +11,4 @@ linter:
     prefer_is_not_operator: true
     prefer_if_elements_to_conditional_expressions: true
     public_member_api_docs: true
-
+    package_api_docs: true
