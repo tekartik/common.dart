@@ -93,3 +93,5 @@ linter:
     unsafe_html: true
     use_full_hex_values_for_flutter_colors: true
     valid_regexps: true
+    # New dart 3.5
+    invalid_runtime_check_with_js_interop_types: true
