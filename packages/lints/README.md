@@ -40,3 +40,13 @@ Stricter for package (api docs and no print):
 # tekartik strict lints (extension over google lints and pedantic)
 include: package:tekartik_lints/package.yaml
 ```
+
+Dart team:
+```yaml
+include: package:dart_flutter_team_lints/analysis_options.yaml
+```
+
+Very good analysis options:
+```yaml
+include: package:very_good_analysis/analysis_options.yaml
+```
