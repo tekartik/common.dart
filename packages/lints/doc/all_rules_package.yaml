@@ -91,11 +91,13 @@
 - type_init_formals
 - type_literal_in_constant_pattern
 - unawaited_futures
+- unintended_html_in_doc_comment
 - unnecessary_brace_in_string_interps
 - unnecessary_const
 - unnecessary_constructor_name
 - unnecessary_getters_setters
 - unnecessary_late
+- unnecessary_library_name
 - unnecessary_new
 - unnecessary_null_aware_assignments
 - unnecessary_null_in_if_null_operators

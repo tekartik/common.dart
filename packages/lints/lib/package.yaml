@@ -4,11 +4,7 @@ include: package:tekartik_lints/strict.yaml
 
 linter:
   rules:
-    avoid_print: true
-    prefer_const_constructors: true
-    prefer_const_literals_to_create_immutables: true
-    prefer_final_fields: true
-    prefer_is_not_operator: true
-    prefer_if_elements_to_conditional_expressions: true
-    public_member_api_docs: true
-    package_api_docs: true
+    - avoid_print
+    - prefer_const_constructors
+    - prefer_const_literals_to_create_immutables
+    - public_member_api_docs
