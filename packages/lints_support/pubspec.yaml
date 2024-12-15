@@ -1,0 +1,36 @@
+name: tekartik_lints_support
+description: Tekartik lints support
+version: 1.0.0
+publish_to: none
+
+environment:
+  sdk: ^3.6.0
+
+# Add regular dependencies here.
+dependencies:
+  fs_shim:
+  dev_build:
+  path:
+  tekartik_common_utils:
+    git:
+      url: https://github.com/tekartik/common_utils.dart
+      ref: dart3a
+  tekartik_lints:
+    git:
+      url: https://github.com/tekartik/common.dart
+      ref: dart3a
+      path: packages/lints
+  tekartik_prj_tktools:
+    git:
+      url: https://github.com/tekartikprj/tktools.git
+      ref: dart3a
+      path: packages/prj_tktools
+  # path: ^1.8.0
+
+dev_dependencies:
+  lints: ">=5.0.0"
+  test: ">=1.24.0"
+
+dependency_overrides:
+  tekartik_lints:
+    path: ../lints

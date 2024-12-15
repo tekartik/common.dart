@@ -10,7 +10,7 @@ updates:
     schedule:
       interval: "monthly"
   - package-ecosystem: "pub"
-    directory: "repo_support"
+    directory: "packages/lints_support"
     schedule:
       interval: "monthly"
   - package-ecosystem: "github-actions"
