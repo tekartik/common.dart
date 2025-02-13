@@ -77,6 +77,7 @@
 - secure_pubspec_urls
 - slash_for_doc_comments
 - sort_pub_dependencies
+- strict_top_level_inference
 - test_types_in_equals
 - throw_in_finally
 - type_annotate_public_apis

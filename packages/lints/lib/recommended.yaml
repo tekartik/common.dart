@@ -56,3 +56,6 @@ linter:
     - throw_in_finally
     - unawaited_futures
     - unnecessary_statements
+    - unnecessary_underscores
+
+
