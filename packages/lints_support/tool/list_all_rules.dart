@@ -10,10 +10,11 @@ Future<void> main() async {
       pathPackageConfigMapGetPackagePath('.', packageConfig, 'tekartik_lints')!;
   stdout.writeln('lintsPackagePath: $tekartikLintsPackagePath');
   var supportPackage = TkLintPackage('.');
-  var files = await Directory(join(tekartikLintsPackagePath, 'lib'))
-      .list()
-      .where((fse) => fse is File && extension(fse.path) == '.yaml')
-      .toList();
+  var files =
+      await Directory(join(tekartikLintsPackagePath, 'lib'))
+          .list()
+          .where((fse) => fse is File && extension(fse.path) == '.yaml')
+          .toList();
   for (var file in files) {
     stdout.writeln('# ${file.path}');
     var package = TkLintPackage(tekartikLintsPackagePath);

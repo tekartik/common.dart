@@ -28,16 +28,20 @@ Future<void> main() async {
   var tekartikLintsPackagePath =
       pathPackageConfigMapGetPackagePath('.', packageConfig, 'tekartik_lints')!;
   stdout.writeln('lintsPackagePath: $tekartikLintsPackagePath');
-  var files = await Directory(join(tekartikLintsPackagePath, 'lib'))
-      .list()
-      .where((fse) => fse is File && extension(fse.path) == '.yaml')
-      .toList();
+  var files =
+      await Directory(join(tekartikLintsPackagePath, 'lib'))
+          .list()
+          .where((fse) => fse is File && extension(fse.path) == '.yaml')
+          .toList();
   for (var file in files) {
     var filePath = file.path;
     stdout.writeln('# $filePath');
     var package = TkLintPackage('.', verbose: true);
-    var rules = await package.getRules(filePath,
-        handleInclude: true, fromInclude: true);
+    var rules = await package.getRules(
+      filePath,
+      handleInclude: true,
+      fromInclude: true,
+    );
     rules.removeObsoleteRules();
 
     package.writeRules(filePath, rules);

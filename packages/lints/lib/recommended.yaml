@@ -52,6 +52,7 @@ linter:
     - prefer_if_elements_to_conditional_expressions
     - prefer_single_quotes
     - sort_child_properties_last
+    - strict_top_level_inference
     - test_types_in_equals
     - throw_in_finally
     - unawaited_futures
