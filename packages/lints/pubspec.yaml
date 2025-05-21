@@ -8,8 +8,7 @@ environment:
 
 dependencies:
   lints: ">=5.1.1"
-  dart_flutter_team_lints: '>=0.1.0'
-  very_good_analysis: '>=2.3.0'
+
 dev_dependencies:
   process_run: ">=1.2.1+1"
   dev_build: ">=1.1.2"
@@ -18,8 +17,6 @@ dev_dependencies:
   yaml: ">=3.1.2"
 dependency_overrides:
   lints: '>=6.0.0'
-  dart_flutter_team_lints: '>=3.5.1'
-  very_good_analysis: '>=7.0.0'
 
 resolution: workspace
 

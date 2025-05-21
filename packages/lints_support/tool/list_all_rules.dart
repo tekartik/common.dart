@@ -23,4 +23,18 @@ Future<void> main() async {
     var lines = rules.toStringList();
     supportPackage.writeIfNeeded(filePath, lines);
   }
+
+  files =
+      await Directory('lib')
+          .list()
+          .where((fse) => fse is File && extension(fse.path) == '.yaml')
+          .toList();
+  for (var file in files) {
+    stdout.writeln('# ${file.path}');
+    var package = TkLintPackage(tekartikLintsPackagePath);
+    var rules = await package.getRules(file.path, handleInclude: true);
+    var filePath = join('doc', 'support', 'all_rules_${basename(file.path)}');
+    var lines = rules.toStringList();
+    supportPackage.writeIfNeeded(filePath, lines);
+  }
 }
