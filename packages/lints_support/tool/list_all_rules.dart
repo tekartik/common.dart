@@ -6,15 +6,17 @@ import 'package:tekartik_prj_tktools/tklint.dart';
 
 Future<void> main() async {
   var packageConfig = await pathGetPackageConfigMap('.');
-  var tekartikLintsPackagePath =
-      pathPackageConfigMapGetPackagePath('.', packageConfig, 'tekartik_lints')!;
+  var tekartikLintsPackagePath = pathPackageConfigMapGetPackagePath(
+    '.',
+    packageConfig,
+    'tekartik_lints',
+  )!;
   stdout.writeln('lintsPackagePath: $tekartikLintsPackagePath');
   var supportPackage = TkLintPackage('.');
-  var files =
-      await Directory(join(tekartikLintsPackagePath, 'lib'))
-          .list()
-          .where((fse) => fse is File && extension(fse.path) == '.yaml')
-          .toList();
+  var files = await Directory(join(tekartikLintsPackagePath, 'lib'))
+      .list()
+      .where((fse) => fse is File && extension(fse.path) == '.yaml')
+      .toList();
   for (var file in files) {
     stdout.writeln('# ${file.path}');
     var package = TkLintPackage(tekartikLintsPackagePath);
@@ -24,11 +26,10 @@ Future<void> main() async {
     supportPackage.writeIfNeeded(filePath, lines);
   }
 
-  files =
-      await Directory('lib')
-          .list()
-          .where((fse) => fse is File && extension(fse.path) == '.yaml')
-          .toList();
+  files = await Directory('lib')
+      .list()
+      .where((fse) => fse is File && extension(fse.path) == '.yaml')
+      .toList();
   for (var file in files) {
     stdout.writeln('# ${file.path}');
     var package = TkLintPackage(tekartikLintsPackagePath);

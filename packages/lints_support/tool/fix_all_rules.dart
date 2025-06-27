@@ -25,14 +25,16 @@ Future<void> writeIfNeeded(String filePath, List<String> newLines) async {
 
 Future<void> main() async {
   var packageConfig = await pathGetPackageConfigMap('.');
-  var tekartikLintsPackagePath =
-      pathPackageConfigMapGetPackagePath('.', packageConfig, 'tekartik_lints')!;
+  var tekartikLintsPackagePath = pathPackageConfigMapGetPackagePath(
+    '.',
+    packageConfig,
+    'tekartik_lints',
+  )!;
   stdout.writeln('lintsPackagePath: $tekartikLintsPackagePath');
-  var files =
-      await Directory(join(tekartikLintsPackagePath, 'lib'))
-          .list()
-          .where((fse) => fse is File && extension(fse.path) == '.yaml')
-          .toList();
+  var files = await Directory(join(tekartikLintsPackagePath, 'lib'))
+      .list()
+      .where((fse) => fse is File && extension(fse.path) == '.yaml')
+      .toList();
   for (var file in files) {
     var filePath = file.path;
     stdout.writeln('# $filePath');
