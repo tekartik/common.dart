@@ -11,9 +11,9 @@ dependencies:
   tekartik_lints:
     git:
       url: https://github.com/tekartik/common.dart
-      ref: dart3a
+      tag_pattern: "tekartik_lints/v{{version}}"
       path: packages/lints
-    version: '>=0.1.0'
+    version: ^1.0.0
 ```
 
 ## Usage

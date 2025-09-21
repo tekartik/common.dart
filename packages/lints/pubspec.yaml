@@ -1,6 +1,6 @@
 name: tekartik_lints
 description: Common dart lints
-version: 0.4.2
+version: 1.0.0
 publish_to: none
 
 environment:
@@ -8,7 +8,12 @@ environment:
 
 dependencies:
   lints: ">=5.1.1"
-
+  tekartik_core:
+    git:
+      url: https://github.com/tekartik/common.dart
+      tag_pattern: "tekartik_core/v{{version}}"
+      path: packages/core
+    version: ^0.1.0
 dev_dependencies:
   process_run: ">=1.2.1+1"
   dev_build: ">=1.1.2"
