@@ -15,8 +15,6 @@ dev_dependencies:
   path: ">=1.9.0"
   test: '>=1.24.4'
   yaml: ">=3.1.2"
-dependency_overrides:
-  lints: '>=6.0.0'
 
 resolution: workspace
 
