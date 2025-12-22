@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:dev_build/build_support.dart';
+import 'package:dev_build/shell.dart';
 import 'package:path/path.dart';
 import 'package:tekartik_prj_tktools/tklint.dart';
 
@@ -24,6 +25,13 @@ Future<void> main() async {
     var filePath = join('doc', 'all_rules_${basename(file.path)}');
     var lines = rules.toStringList();
     supportPackage.writeIfNeeded(filePath, lines);
+
+    var content = (await run(
+      'tklint list-rules --force-any ${shellArgument(file.path)}',
+    )).first.outText;
+    await File(
+      join('.local', 'all_rules_any_${basename(file.path)}'),
+    ).writeAsString(content);
   }
 
   files = await Directory('lib')
