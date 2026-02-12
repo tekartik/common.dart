@@ -18,6 +18,7 @@ Future<void> main() async {
       .list()
       .where((fse) => fse is File && extension(fse.path) == '.yaml')
       .toList();
+  await Directory('.local').create(recursive: true);
   for (var file in files) {
     stdout.writeln('# ${file.path}');
     var package = TkLintPackage(tekartikLintsPackagePath);

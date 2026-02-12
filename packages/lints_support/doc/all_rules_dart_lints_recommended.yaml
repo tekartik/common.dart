@@ -84,6 +84,7 @@
 - unnecessary_underscores
 - unrelated_type_equality_checks
 - use_function_type_syntax_for_parameters
+- use_null_aware_elements
 - use_rethrow_when_possible
 - use_string_in_part_of_directives
 - use_super_parameters

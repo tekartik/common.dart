@@ -42,8 +42,6 @@ linter:
     - directives_ordering
     - implicit_reopen
     - invalid_case_patterns
-    - iterable_contains_unrelated_type
-    - list_remove_unrelated_type
     - no_adjacent_strings_in_list
     - no_literal_bool_comparisons
     - no_self_assignments
@@ -52,12 +50,9 @@ linter:
     - prefer_if_elements_to_conditional_expressions
     - prefer_single_quotes
     - sort_child_properties_last
-    - strict_top_level_inference
     - test_types_in_equals
     - throw_in_finally
     - unawaited_futures
-    - unnecessary_this
     - unnecessary_statements
-    - unnecessary_underscores
 
 
