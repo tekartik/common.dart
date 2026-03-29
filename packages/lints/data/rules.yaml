@@ -3,3 +3,6 @@
 
 - name: avoid_dynamic_calls
   comment: Make sure we type an element before calling any method/member on it
+
+- name: use_null_aware_elements
+  comment: If-elements testing for null can be replaced with null-aware elements.
