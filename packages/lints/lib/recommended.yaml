@@ -36,10 +36,14 @@ linter:
     - always_declare_return_types
     - avoid_dynamic_calls
     - avoid_null_checks_in_equality_operators
+    - avoid_print
     - avoid_slow_async_io
+    - avoid_void_async
     - cancel_subscriptions
+    - conditional_uri_does_not_exist
     - deprecated_member_use_from_same_package
     - directives_ordering
+    - eol_at_end_of_file
     - implicit_reopen
     - invalid_case_patterns
     - no_adjacent_strings_in_list
@@ -49,6 +53,7 @@ linter:
     - package_prefixed_library_names
     - prefer_if_elements_to_conditional_expressions
     - prefer_single_quotes
+    - simple_directive_paths
     - sort_child_properties_last
     - test_types_in_equals
     - throw_in_finally

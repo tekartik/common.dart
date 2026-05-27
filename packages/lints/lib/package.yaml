@@ -4,7 +4,6 @@ include: package:tekartik_lints/strict.yaml
 
 linter:
   rules:
-    - avoid_print
     - prefer_const_constructors
     - prefer_const_literals_to_create_immutables
     - public_member_api_docs
