@@ -54,6 +54,7 @@
 - null_check_on_nullable_type_parameter
 - null_closures
 - omit_local_variable_types
+- only_throw_errors
 - overridden_fields
 - package_names
 - package_prefixed_library_names

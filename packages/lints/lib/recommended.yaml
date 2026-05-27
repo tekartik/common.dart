@@ -50,6 +50,7 @@ linter:
     - no_literal_bool_comparisons
     - no_self_assignments
     - omit_local_variable_types
+    - only_throw_errors
     - package_prefixed_library_names
     - prefer_if_elements_to_conditional_expressions
     - prefer_single_quotes
