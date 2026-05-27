@@ -6,6 +6,10 @@ enable-beta-ecosystems: true
 
 updates:
   - package-ecosystem: "pub"
+    directory: "packages/core"
+    schedule:
+      interval: "monthly"
+  - package-ecosystem: "pub"
     directory: "packages/lints"
     schedule:
       interval: "monthly"
