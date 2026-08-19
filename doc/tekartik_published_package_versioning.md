@@ -215,13 +215,3 @@ dart pub global run dev_build:run_ci --pub-downgrade --analyze --no-override --r
 This recursively runs `dart/flutter pub downgrade` and `dart analyze` on every project. Any analysis
 error means a lower bound is too low - raise it to the version that actually provides the API being
 used, rather than removing the bound.
-
-`--no-override` bypasses any per-package `tool/run_ci_override.dart`, so every project runs the same
-plain downgrade + analyze rather than its own custom CI steps.
-
-Local path/git overrides still short-circuit the check for the packages they cover - a sibling
-resolved through `pubspec_overrides.yaml` is read from disk, not at its published minimum. Drop the
-overrides when the lower bound on a sibling Tekartik package is the thing being verified.
-
-Afterwards, restore the normal resolution with a `dart pub upgrade` (or `run_ci` without
-`--pub-downgrade`) so the lockfile is not left pinned to the minimums.
