@@ -25,7 +25,7 @@ Future<void> main() async {
     var rules = await package.getRules(file.path, handleInclude: true);
     var filePath = join('doc', 'all_rules_${basename(file.path)}');
     var lines = rules.toStringList();
-    supportPackage.writeIfNeeded(filePath, lines);
+    await supportPackage.writeIfNeeded(filePath, lines);
 
     var content = (await run(
       'tklint list-rules --force-any ${shellArgument(file.path)}',
@@ -41,10 +41,15 @@ Future<void> main() async {
       .toList();
   for (var file in files) {
     stdout.writeln('# ${file.path}');
-    var package = TkLintPackage(tekartikLintsPackagePath);
-    var rules = await package.getRules(file.path, handleInclude: true);
+    var rules = await supportFileRules(file.path);
     var filePath = join('doc', 'support', 'all_rules_${basename(file.path)}');
     var lines = rules.toStringList();
-    supportPackage.writeIfNeeded(filePath, lines);
+    await supportPackage.writeIfNeeded(filePath, lines);
   }
 }
+
+/// Rules of the support file [path] of this package (`lib/<name>.yaml`,
+/// which includes an upstream lint set), includes resolved with the package
+/// config of this package.
+Future<TkLintRules> supportFileRules(String path) =>
+    TkLintPackage('.').getRules(path, handleInclude: true);
